@@ -279,12 +279,12 @@ SCRATCH::allow3d{
 		var p:Point = scratchStage.localToGlobal(originPt);
 		stage3D.x = p.x;
 		stage3D.y = p.y;
-		var width:uint = Math.ceil(480 * appScale);
+		var width:uint = Math.ceil(640 * appScale);
 		var height:uint = Math.ceil(360 * appScale);
 		var rect:Rectangle = new Rectangle(0, 0, width, height);
 		if (stage3D.context3D && (!scissorRect || !scissorRect.equals(rect))) {
 			scissorRect = rect;
-			projMatrix = createOrthographicProjectionMatrix(480, 360, 0, 0);
+			projMatrix = createOrthographicProjectionMatrix(640, 360, 0, 0);
 			stage3D.context3D.setScissorRectangle(scissorRect);
 			stage3D.context3D.configureBackBuffer(width, height, 0, false, true);
 //trace('Setting backbuffer and scissor rectangle');
@@ -1247,7 +1247,7 @@ SCRATCH::allow3d{
 	private var FC:Vector.<Vector.<Number>> = Vector.<Vector.<Number>>([
 		Vector.<Number>([1, 2, 0, 0.5]), // FC0
 		Vector.<Number>([Math.PI, 180, 60, 120]), // FC1
-		Vector.<Number>([240, 3, 4, 5]), // FC2
+		Vector.<Number>([320, 3, 4, 5]), // FC2
 		Vector.<Number>([6, 0.11, 0.09, 0.001]), // FC3
 		Vector.<Number>([360, 0, 0, 0]), // FC4, partially available
 		Vector.<Number>([0, 0, 0, 0]), // FC5, available
