@@ -282,7 +282,7 @@ public class ScratchRuntime {
 				f.copyPixels(circle.bitmapData,circle.bitmapData.rect,new Point(app.stagePane.mouseX-circle.width/2.0,app.stagePane.mouseY-circle.height/2.0));
 			}
 			if (showCursor) {
-				f.draw(cursor,new Matrix(1,0,0,1,app.stagePane.scratchMouseX()+240,-app.stagePane.scratchMouseY()+180));
+				f.draw(cursor,new Matrix(1,0,0,1,app.stagePane.scratchMouseX()+320,-app.stagePane.scratchMouseY()+180));
 			}
 		}
 		while (videoSounds.length>videoFrames.length) {
@@ -359,15 +359,15 @@ public class ScratchRuntime {
 			micReady=false;
 		}
 		if (fullEditor) {
-			if (app.stage.stageWidth<960 && app.stage.stageHeight<640) {
+			if (app.stage.stageWidth<1280 && app.stage.stageHeight<640) {
 				videoWidth = app.stage.stageWidth;
 				videoHeight = app.stage.stageHeight;
 			}
 			else {
 				var ratio:Number = app.stage.stageWidth/app.stage.stageHeight;
-				if (960/ratio<640) {
-					videoWidth = 960;
-					videoHeight = 960/ratio;
+				if (1280/ratio<640) {
+					videoWidth = 1280;
+					videoHeight = 1280/ratio;
 				}
 				else {
 					videoWidth = 640*ratio;
@@ -376,7 +376,7 @@ public class ScratchRuntime {
 			}
 		}
 		else {
-			videoWidth = 480;
+			videoWidth = 640;
 			videoHeight = 360;
 		}
 		ready=ReadyLabel.COUNTDOWN;
