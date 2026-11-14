@@ -448,7 +448,7 @@ spriteFeaturesFilter.visible = false; // disable features filter for now
 							centerY: ScratchCostume.kCalculateCenter,
 							bitmapResolution: item.dbObj.info[2]
 						};
-					} else if (item.dbObj.info.length == 2 && item.dbObj.info[0] == 960 && item.dbObj.info[1] == 720) {
+					} else if (item.dbObj.info.length == 2 && item.dbObj.info[0] == 1280 && item.dbObj.info[1] == 720) {
 						obj = {
 							centerX: ScratchCostume.kCalculateCenter,
 							centerY: ScratchCostume.kCalculateCenter,
