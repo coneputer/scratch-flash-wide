@@ -12,9 +12,14 @@ repositories {
         name 'Apache Flex'
         artifactPattern 'http://archive.apache.org/dist/flex/[revision]/binaries/[module]-[revision]-bin.[ext]'
     }
-    ivy {
+    /*ivy {
         name 'Player Globals'
         artifactPattern 'http://fpdownload.macromedia.com/get/flashplayer/installers/archive/[module]/[module][revision].[ext]'
+    }*/
+    ivy {
+        name 'Player Globals'
+        ivyPattern 'https://mrcomputer1.github.io/scratch-modding/resources/playerglobal-ivy/[module][revision].[ext]'
+		artifactPattern 'https://github.com/nexussays/playerglobal/raw/refs/heads/master/11.6/playerglobal.swc'
     }
 }
 
