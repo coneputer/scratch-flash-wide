@@ -169,7 +169,7 @@ public class MotionAndPenPrims {
 			return new Point(w.scratchMouseX(), w.scratchMouseY());
 		}
 		else if (arg == "_random_"){
-			return new Point(Math.round((Math.random()*480) - 240), Math.round((Math.random()*360) - 180));
+			return new Point(Math.round((Math.random()*640) - 320), Math.round((Math.random()*360) - 180));
 		}
 		else {
 			var s:ScratchSprite = app.stagePane.spriteNamed(arg);
@@ -247,7 +247,7 @@ public class MotionAndPenPrims {
 		var alpha:Number = (0xFF & (s.penColorCache >> 24)) / 0xFF;
 		if (alpha == 0) alpha = 1;
 		g.beginFill(0xFFFFFF & s.penColorCache, alpha);
-		g.drawCircle(240 + x, 180 - y, s.penWidth / 2);
+		g.drawCircle(320 + x, 180 - y, s.penWidth / 2);
 		g.endFill();
 		app.stagePane.penActivity = true;
 	}
@@ -284,7 +284,7 @@ public class MotionAndPenPrims {
 
 	private function primSetPenSize(b:Block):void {
 		var s:ScratchSprite = interp.targetSprite();
-		if (s != null) s.setPenSize(Math.max(1, Math.min(960, Math.round(interp.numarg(b, 0)))));
+		if (s != null) s.setPenSize(Math.max(1, Math.min(1280, Math.round(interp.numarg(b, 0)))));
 	}
 
 	private function primChangePenSize(b:Block):void {
@@ -324,8 +324,8 @@ public class MotionAndPenPrims {
 		var alpha:Number = (0xFF & (s.penColorCache >> 24)) / 0xFF;
 		if (alpha == 0) alpha = 1;
 		g.lineStyle(s.penWidth, 0xFFFFFF & s.penColorCache, alpha);
-		g.moveTo(240 + oldX, 180 - oldY);
-		g.lineTo(240 + newX, 180 - newY);
+		g.moveTo(320 + oldX, 180 - oldY);
+		g.lineTo(320 + newX, 180 - newY);
 //trace('pen line('+oldX+', '+oldY+', '+newX+', '+newY+')');
 		app.stagePane.penActivity = true;
 	}
