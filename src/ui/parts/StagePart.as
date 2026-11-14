@@ -493,9 +493,9 @@ public class StagePart extends UIPart {
 		if (!playButton) {
 			playButton = new Sprite();
 			playButton.graphics.beginFill(0, 0.3);
-			playButton.graphics.drawRect(0, 0, 480, 360);
+			playButton.graphics.drawRect(0, 0, 640, 360);
 			var flag:Bitmap = Resources.createBmp('playerStartFlag');
-			flag.x = (480 - flag.width) / 2;
+			flag.x = (640 - flag.width) / 2;
 			flag.y = (360 - flag.height) / 2;
 			playButton.alpha = .9;
 			playButton.addChild(flag);
