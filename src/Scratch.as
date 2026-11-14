@@ -922,22 +922,22 @@ public class Scratch extends Sprite {
 			// adjust for global scale (from browser zoom)
 
 			if (stageIsContracted) {
-				stagePart.setWidthHeight(240 + extraW, 180 + extraH, 0.5);
+				stagePart.setWidthHeight(320 + extraW, 180 + extraH, 0.5);
 			} else {
-				stagePart.setWidthHeight(480 + extraW, 360 + extraH, 1);
+				stagePart.setWidthHeight(640 + extraW, 360 + extraH, 1);
 			}
 			stagePart.x = 5;
 			stagePart.y = isMicroworld ? 5 : topBarPart.bottom() + 5;
 			fixLoadProgressLayout();
 		} else {
 			drawBG();
-			var pad:int = (w > 550) ? 16 : 0; // add padding for full-screen mode
-			var scale:Number = Math.min((w - extraW - pad) / 480, (h - extraH - pad) / 360);
+			var pad:int = (w > 710) ? 16 : 0; // add padding for full-screen mode
+			var scale:Number = Math.min((w - extraW - pad) / 640, (h - extraH - pad) / 360);
 			scale = Math.max(0.01, scale);
-			var scaledW:int = Math.floor((scale * 480) / 4) * 4; // round down to a multiple of 4
-			scale = scaledW / 480;
+			var scaledW:int = Math.floor((scale * 640) / 4) * 4; // round down to a multiple of 4
+			scale = scaledW / 640;
 			presentationScale = scale;
-			var playerW:Number = (scale * 480) + extraW;
+			var playerW:Number = (scale * 640) + extraW;
 			var playerH:Number = (scale * 360) + extraH;
 			stagePart.setWidthHeight(playerW, playerH, scale);
 			stagePart.x = int((w - playerW) / 2);
