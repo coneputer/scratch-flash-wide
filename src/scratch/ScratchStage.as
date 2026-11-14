@@ -214,7 +214,7 @@ public class ScratchStage extends ScratchObj {
 	public function baseW():Number { return bg.width }
 	public function baseH():Number { return bg.height }
 
-	public function scratchMouseX():int { return Math.max(-240, Math.min(mouseX - (STAGEW / 2), 240)) }
+	public function scratchMouseX():int { return Math.max(-320, Math.min(mouseX - (STAGEW / 2), 320)) }
 	public function scratchMouseY():int { return -Math.max(-180, Math.min(mouseY - (STAGEH / 2), 180)) }
 
 	public override function allObjects():Array {
@@ -537,10 +537,10 @@ public class ScratchStage extends ScratchObj {
 			// Set up the camera only the first time it is used.
 			camera = Camera.getCamera();
 			if (!camera) return; // no camera available or access denied
-			camera.setMode(640, 480, 30);
+			camera.setMode(640, 640, 30);
 		}
 		if (video == null) {
-			video = new Video(480, 360);
+			video = new Video(640, 360);
 			video.attachCamera(camera);
 			videoImage = new Bitmap(new BitmapData(video.width, video.height, false));
 			videoImage.alpha = videoAlpha;
@@ -816,9 +816,9 @@ public class ScratchStage extends ScratchObj {
 			addChild(obj);
 			if (obj is ScratchSprite) {
 				(obj as ScratchSprite).updateCostume();
-				obj.setScratchXY(p.x - 240, 180 - p.y);
+				obj.setScratchXY(p.x - 320, 180 - p.y);
 				Scratch.app.selectSprite(obj);
-				obj.setScratchXY(p.x - 240, 180 - p.y); // needed because selectSprite() moves sprite back if costumes tab is open
+				obj.setScratchXY(p.x - 320, 180 - p.y); // needed because selectSprite() moves sprite back if costumes tab is open
 				(obj as ScratchObj).applyFilters();
 			}
 			if (!(obj is ScratchSprite) || Scratch.app.editMode) Scratch.app.setSaveNeeded();
