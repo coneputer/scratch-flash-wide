@@ -37,7 +37,7 @@ public class ImageCanvas extends Sprite {
 	private var segmentationLayer:Bitmap;
 	private var visibleMask:Shape;
 
-	static public const canvasWidth:uint = 480;
+	static public const canvasWidth:uint = 640;
 	static public const canvasHeight:uint = 360;
 	static private const canvasBorderWidth:uint = 25;
 	static private const scrollbarThickness:int = 9;
@@ -145,7 +145,7 @@ public class ImageCanvas extends Sprite {
 
 		if (editor is BitmapEdit) {
 			// Bitmap editor works at double resolution.
-			var bm:BitmapData = new BitmapData(960, 720, true, 0);
+			var bm:BitmapData = new BitmapData(1280, 720, true, 0);
 			visibleArea.addChild(bitmapLayer = new Bitmap(bm));
 			bitmapLayer.scaleX = bitmapLayer.scaleY = 0.5;
 			visibleArea.addChild(segmentationLayer = new Bitmap(bm.clone()));
