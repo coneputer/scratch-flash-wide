@@ -940,7 +940,7 @@ public class Scratch extends Sprite {
 			var playerW:Number = (scale * 640) + extraW;
 			var playerH:Number = (scale * 360) + extraH;
 			stagePart.setWidthHeight(playerW, playerH, scale);
-			stagePart.x = int((w - playerW) / 2);
+			stagePart.x = int(160+(w - playerW) / 2);
 			stagePart.y = int((h - playerH) / 2);
 			fixLoadProgressLayout();
 			return;
